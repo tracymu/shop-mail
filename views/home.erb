@@ -1,19 +1,11 @@
+<p>Use the form below to be updated when the product you're after goes on sale.</p>
+<p>Simply copy and paste the url of the page your product is on <em>(Note there must be only one product on that page)</em>
+</p>
 <section id="add">
 	<form action="/" method="post">
-		<textarea name="content" placeholder ="Your note" ></textarea>
-		<input type = "submit" value ="Take Note!">
+		<input name="content" placeholder ="Your email" >
+		<input name="content" placeholder ="URL" >
+		<input type = "submit">
 	</form>
 </section>
 
-<% @notes.each do |note| %>
-  <article <%= 'class="complete"' if note.complete %>>
-    <p>
-      <%=h note.content %>
-      <span><a href="/<%= note.id %>">[edit]</a></span>
-    </p>
-    <p class="links">
-      <a href="/<%= note.id %>/complete">&#8623;</a>
-    </p>
-    <p class="meta">Created: <%= note.created_at %></p>
-  </article>
-<% end %>
