@@ -1,3 +1,10 @@
+# So I have all my scraper things and rake tasks, I want to use that scraper thing to loop through all the emails.
+
+#how do I empty my database
+
+# How do I see what is in my database? e.g. is there a console like in rails?
+
+
 require 'sinatra'
 require 'data_mapper'
 require 'builder'
@@ -10,7 +17,8 @@ SITE_TITLE = "Maybe Later"
 SITE_DESCRIPTION = "Treat Yourself If It Goes On Sale"
 
 get '/' do
-    erb :home
+  @products = Product.all
+  erb :home
 end
 
 post '/' do
